@@ -1,4 +1,3 @@
-
 tasks = {
 #task:what you must do before
     1:[2],
@@ -9,9 +8,6 @@ tasks = {
     6:[],
     7:[1]
 }
-
-
-
 def do_task():
     for task in tasks:
         if not tasks[task]:
@@ -19,12 +15,10 @@ def do_task():
             tasks.pop(task)
             return task
     return None
-
 def delete_all_ts(t):
     for task in tasks:
         if t in tasks[task]:
             tasks[task].remove(t)
-
 def main():
     task_placement = ''
     previous = 10
@@ -42,9 +36,7 @@ def main():
                 continue
         else:
             previous = current
-
     print(previous,current)
-
     for i in range(100):
         if not tasks:
             f = True
@@ -58,11 +50,5 @@ def main():
         print(task_placement)
     else:
         print('Cannot complete these tasks. Going to bed.')
-
-
-
-
-
-
 if __name__ == '__main__':
     main()
