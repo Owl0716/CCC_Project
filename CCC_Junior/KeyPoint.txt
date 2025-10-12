@@ -1,0 +1,19 @@
+1. how to check mirror?
+    def is_mirror(s: str) -> bool:
+    s = s.strip()  # optional: remove spaces/newlines
+    return s == s[::-1]
+2. how to check a number only contains 1, 8, 6 or 9?
+    def only_1689(num):
+        return set(str(num)) <= {'1', '6', '8', '9'}
+
+    def only_1689(num):
+        for ch in str(num):
+            if ch not in "1689":
+                return False
+        return True
+
+3. how to check a string only contains the same letter?
+    def all_same(s: str) -> bool:
+        return len(set(s)) == 1
+
+4. great use of mirror

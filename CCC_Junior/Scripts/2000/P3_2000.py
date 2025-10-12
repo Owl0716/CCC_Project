@@ -1,9 +1,4 @@
 
-
-
-
-
-
 def main():
     quarters_num = int(input('How many quarters does Martha have in the jar?'))
     pf = int(input('How many times has the first machine been played since paying out?'))
