@@ -14,11 +14,12 @@ def main():
     for i in range(lowest_num,highest_num+1):
         new_num = ''
         for j in str(i):
-            try:1
+            try:
                 q = int(j)
                 new_num+=str(num[q])
             except:
                 break
+
         new_num = list(new_num)
         new_num.reverse()
         n = ''
