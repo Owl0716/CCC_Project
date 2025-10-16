@@ -1,60 +1,36 @@
-def read_file(file_path):
-    new_lines = []
-    with open(file_path, "r") as f:
-        lines = f.readlines()
-        for line in lines:
-            if not line.strip() == '':
-                line = line.strip()
-                new_lines.append(line)
+num = {
+    1:1,
+    6:9,
+    8:8,
+    9:6,
+    0:0
 
-    return new_lines
-
+}
+import math
 def main():
-    lines = read_file('../../TextFiles/2001/P2_Input_2001')
-    lines = str(lines)
-    y = ''
-    k = 0
-    f,lines = lines.split('C')
-    clubs,lines = lines.split('D')
-    diamonds,lines = lines.split('H')
-    hearts,spades = lines.split('S')
-    y = clubs + diamonds + hearts + spades
-    for j in y:
-        if j == 'A':
-            k+=4
-        elif j == 'K':
-            k+=3
-        elif j == 'Q':
-            k+=2
-        elif j == 'J':
-            k+=1
+    lowest_num = int(input('Enter the lower bound of the interval:'))
+    highest_num = int(input('Enter the upper bound of the interval:'))
+    m=0
+    for i in range(lowest_num,highest_num+1):
+        new_num = ''
+        for j in str(i):
+            try:
+                q = int(j)
+                new_num+=str(num[q])
+            except:
+                break
 
-    if len(clubs) == 0:
-        k+=3
-    if len(diamonds) == 0:
-        k += 3
-    if len(hearts) == 0:
-        k += 3
-    if len(spades) == 0:
-        k += 3
+        new_num = list(new_num)
+        new_num.reverse()
+        n = ''
+        for l in new_num:
+            n+= l
+        if not n == '':
+            new_num_int = int(n)
+            if i == new_num_int:
+                m+=1
+    print('The number of rotatable numbers is:')
+    print(m)
 
-    if len(clubs) == 1:
-        k+=2
-    if len(diamonds) == 1:
-        k += 2
-    if len(hearts) == 1:
-        k += 2
-    if len(spades) == 1:
-        k += 2
-
-    if len(clubs) == 2:
-        k+=1
-    if len(diamonds) == 2:
-        k += 1
-    if len(hearts) == 2:
-        k += 1
-    if len(spades) == 2:
-        k += 1
-    print(k)
 if __name__ == '__main__':
     main()
